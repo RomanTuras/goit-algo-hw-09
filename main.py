@@ -36,12 +36,14 @@ def find_min_coins(amount):
     return result
 
 # Приклади для перевірки ефективності
-amounts = [113, 500, 1000, 5000]
-
-for amount in amounts:
-    greedy_time = timeit.timeit(lambda: find_coins_greedy(amount), number=1000)
-    dp_time = timeit.timeit(lambda: find_min_coins(amount), number=1000)
-    print(f"Сума: {amount}")
-    print(f"Жадібний алгоритм: {greedy_time:.6f} секунд")
-    print(f"Динамічне програмування: {dp_time:.6f} секунд")
-    print()
+amount = 113
+greedy_time = timeit.timeit(lambda: find_coins_greedy(amount), number=1)
+dp_time = timeit.timeit(lambda: find_min_coins(amount), number=1)
+print(f"Сума: {amount}")
+print()
+print(f"Жадібний алгоритм: {greedy_time:.6f} секунд")
+print(find_coins_greedy(amount))
+print()
+print(f"Динамічне програмування: {dp_time:.6f} секунд")
+print(find_min_coins(amount))
+print()
